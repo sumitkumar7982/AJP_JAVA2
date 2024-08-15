@@ -1,18 +1,21 @@
 package github;
 
+class Numbers extends Thread{
+	@Override
+	public void run() {
+	// Code to be executed in the thread
+		for (int i = 0; i < 5; i++) {
+			System.out.println(i);
+		}
+	}
+}
+
 public class NumberPrinter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Thread td = new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				printNumbers();
-			}
-		});
+		Numbers td = new Numbers();
 		
 		// Start the thread
 		td.start();
@@ -27,10 +30,5 @@ public class NumberPrinter {
 		System.out.println("Finished printing numbers.");
 	}
 
-	// Method to print numbers from 0 to 4
-	private static void printNumbers() {
-		for (int i = 0; i < 5; i++) {
-			System.out.println(i);
-		}
-	}
+	
 }
